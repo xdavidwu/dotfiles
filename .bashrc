@@ -46,8 +46,6 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias rm='rm -I'
 [ -f /usr/bin/vimpager ] && alias less=vimpager
-alias batlvl="echo $(($(cat /sys/class/power_supply/BAT0/charge_now) * 100 /
-	$(cat /sys/class/power_supply/BAT0/charge_full_design) ))"
 alias sway="env LC_ALL=zh_TW.utf8 sway"
 
 # TODO output quick switches for xps with sway
@@ -59,6 +57,12 @@ xrandr --output VGA-1 --mode "1360x768_60.00" --pos 0x0'
 alias vgaright='xrandr --output VGA-1 --mode 1920x1080 --right-of LVDS-1'
 alias bookmode='xrandr --output LVDS-1 --rotate right && xinput set-prop "SynPS/2 Synaptics TouchPad" --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1'
 alias normalmode='xrandr --output LVDS-1 --rotate normal && xinput set-prop "SynPS/2 Synaptics TouchPad" --type=float "Coordinate Transformation Matrix" 0 0 0 0 0 0 0 0 0'
+
+# functions
+batlvl() {
+	echo $(($(cat /sys/class/power_supply/BAT0/charge_now) * 100 /
+		$(cat /sys/class/power_supply/BAT0/charge_full_design) ))
+}
 
 # application envs
 # policy: should here even if global like /etc/environments
