@@ -72,7 +72,7 @@ batlvl() {
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
-export PAGER=vimpager
+[ -f /usr/bin/vimpager ] && export PAGER=vimpager
 export LESS='-S -R'
 export LESSHISTFILE=-
 export EDITOR=vim
