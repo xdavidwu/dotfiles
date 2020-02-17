@@ -1,0 +1,8 @@
+background-color=#303030
+font=Noto Sans CJK TC 10
+border-size=0
+default-timeout=5000
+layer=overlay
+margin=19
+padding=10
+icon-path=/usr/share/icons/Arc

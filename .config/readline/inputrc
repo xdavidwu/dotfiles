@@ -1,0 +1,5 @@
+set colored-completion-prefix on
+set colored-stats on
+set completion-query-items 512
+set show-all-if-ambiguous on
+set skip-completed-text on

@@ -1,0 +1,25 @@
+source /etc/vimrc
+source /usr/share/vim/vim82/defaults.vim
+highlight Pmenu ctermbg=none ctermfg=none
+highlight PmenuSbar ctermbg=none
+highlight PmenuThumb ctermbg=gray
+highlight PmenuSel ctermbg=darkgray ctermfg=white
+highlight ALEErrorLine ctermbg=darkblue
+set title
+set mouse=
+set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo
+set backupdir=$HOME/.cache/vim/backup | call mkdir(&backupdir, 'p', 0700)
+set directory=$HOME/.cache/vim/swap   | call mkdir(&directory, 'p', 0700)
+set viewdir=$HOME/.cache/vim/view     | call mkdir(&viewdir, 'p', 0700)
+set undodir=$HOME/.cache/vim/undo     | call mkdir(&undodir, 'p', 0700)
+let g:ale_set_signs=0
+let g:c_parse_compile_commands=1
+let g:ale_linters={
+\	'c': ['clangd']
+\}
+"let g:ale_c_build_dir='build'
+"let g:ale_c_clangd_options='--compile-commands-dir=.'
+let g:ale_php_phpcs_options = "--standard=PSR2"
+let g:ale_completion_enabled=1
+let g:SuperTabDefaultCompletionType='<c-n>'
+autocmd User ALELintPost let tmp=ale#statusline#Count(bufnr(''))['total'] | set rulerformat=%{tmp},%l,%c%V%=%P

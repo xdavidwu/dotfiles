@@ -1,0 +1,32 @@
+source ~/.config/mutt/gpg.muttrc
+set from = "xdavidwuph@gmail.com"
+set realname = "David Wu"
+set imap_user = "xdavidwuph"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
+set smtp_url = "smtp://xdavidwuph@smtp.gmail.com:587/"
+set ssl_force_tls = yes
+set imap_keepalive = 900
+
+set sort = 'reverse-last-date-received'
+
+color hdrdefault brightblue default
+color quoted brightblue default
+color signature brightblue default
+color attachment brightred default
+color prompt brightmagenta default
+color message brightred default
+color error brightred default
+#color indicator default red
+color status black white
+color tree white default
+color normal white default
+color markers red default
+color search white default
+color tilde brightmagenta default
+color index blue default ~F
+color index red default "~N|~O"
+
+# color body brightwhite black '\*+[^*]+\*+'
+# color body brightwhite black '_+[^_]+_+'

@@ -1,0 +1,8 @@
+#termcapinfo xterm* ti@:te@
+mousetrack on
+startup_message off
+vbell off
+nethack on
+msgwait 3
+scrollback 512
+compacthist on

@@ -1,0 +1,12 @@
+[user]
+	name = xdavidwu
+	email = xdavidwuph@gmail.com
+[commit]
+	gpgSign = true
+[sendemail]
+	smtpEncryption = tls
+	smtpServer = smtp.gmail.com
+	smtpUser = xdavidwuph@gmail.com
+	smtpServerPort = 587
+[includeIf "gitdir:~/cscc/"]
+	path = ~/.config/git/config-cscc
