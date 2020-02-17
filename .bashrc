@@ -17,7 +17,12 @@ export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
 [ ! -d "$XDG_CACHE_HOME" ] && mkdir "$XDG_CACHE_HOME"
 HISTFILE="$XDG_CACHE_HOME/bash_history"
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
-export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+if [ -n "$(grep -F 'ID=arch' /etc/os-release)" ] ||
+		[ -n "$(grep -F 'ID_LIKE=arch' /etc/os-release)" ];then
+	export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+else
+	export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc-nonarch"
+fi
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
