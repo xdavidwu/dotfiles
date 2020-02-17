@@ -1,4 +1,3 @@
-source /etc/vimrc
 highlight Pmenu ctermbg=none ctermfg=none
 highlight PmenuSbar ctermbg=none
 highlight PmenuThumb ctermbg=gray
