@@ -118,17 +118,17 @@ PS1A=
 while [ -n "$LVLSTR" ];do
 	case "$LVLSTR" in
 		S*)
-			PS1A="$PS1A\[\033[01;33m\]>"
+			PS1A="$PS1A\[\033[44m\]>"
 			;;
 		s*)
-			PS1A="$PS1A\[\033[01;31m\]>"
+			PS1A="$PS1A\[\033[41m\]>"
 			;;
 		n*)
-			PS1A="$PS1A\[\033[01;32m\]>"
+			PS1A="$PS1A\[\033[0m\]>"
 			;;
 	esac
 	LVLSTR=${LVLSTR#?}
 done
-PS1="$PS1A$PS1"
+PS1="$PS1A\[\033[0m\]$PS1"
 export PTERM
 alias ssh="env TERM=$PTERM ssh"
