@@ -85,3 +85,50 @@ export SDL_VIDEODRIVER=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
+
+# shell level prompt
+# PTERM: poisoned TERM, $TERM/$LVLSTR, ssh pass TERM by default
+# if $PPID is a GUI term, treat it as a fresh start
+# if $TERM contains /, it is $PTERM passed from ssh
+case "$TERM" in
+	*/*)
+		PTERM=$TERM
+		TERM=${TERM%%/*}
+		;;
+esac
+# bash complains if $() faces null
+PCMD=$(tr -d '\000' < /proc/$PPID/cmdline)
+PTERM=${PTERM:-$TERM/}
+case "$PCMD" in
+	SCREEN*)
+		PTERM="${PTERM}S"
+		;;
+	sshd*)
+		PTERM="${PTERM}s"
+		;;
+	*term*)
+		PTERM="$TERM/"
+		;;
+	*)
+		[ -z "$INITLVL" ] && PTERM="${PTERM}n"
+		;;
+esac
+LVLSTR=${PTERM##*/}
+PS1A=
+while [ -n "$LVLSTR" ];do
+	case "$LVLSTR" in
+		S*)
+			PS1A="$PS1A\[\033[01;33m\]>"
+			;;
+		s*)
+			PS1A="$PS1A\[\033[01;31m\]>"
+			;;
+		n*)
+			PS1A="$PS1A\[\033[01;32m\]>"
+			;;
+	esac
+	LVLSTR=${LVLSTR#?}
+done
+PS1="$PS1A$PS1"
+export PTERM
+alias ssh="env TERM=$PTERM ssh"
