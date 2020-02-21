@@ -10,3 +10,5 @@
 	smtpServerPort = 587
 [includeIf "gitdir:~/cscc/"]
 	path = ~/.config/git/config-cscc
+[includeIf "gitdir:~/automated/"]
+	path = ~/.config/git/config-automated
