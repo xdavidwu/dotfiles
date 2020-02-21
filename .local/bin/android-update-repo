@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+for repo in android_packages_apps_Backgrounds android_packages_apps_Eleven android_packages_apps_Jelly android_packages_apps_Recorder;do
+	cd ~/automated/$repo/
+	echo $repo
+	git pull
+	git pull upstream $(git branch --show-current)
+	git push
+done
