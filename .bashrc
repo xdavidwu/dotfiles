@@ -51,6 +51,7 @@ alias diff='diff --color=auto'
 alias rm='rm -I'
 [ -f /usr/bin/vimpager ] && alias less=vimpager
 alias sway="env LC_ALL=zh_TW.utf8 sway"
+alias mcshl="env _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -Xnoclassgc -XX:MaxGCPauseMillis=50 -XX:+UseG1GC $_JAVA_OPTIONS\" mcshl"
 
 # TODO output quick switches for xps with sway
 alias hdmiclone='xrandr --output HDMI-1 --mode 1360x768 --pos 0x0'
@@ -76,7 +77,6 @@ export LESS='-S -R'
 export LESSHISTFILE=-
 export EDITOR=vim
 export AIRCRACK_LIBEXEC_PATH=/usr/lib/aircrack-ng
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -Xnoclassgc -XX:MaxGCPauseMillis=50 -XX:+UseG1GC $_JAVA_OPTIONS"
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland-egl
 export MESA_LOADER_DRIVER_OVERRIDE=iris
