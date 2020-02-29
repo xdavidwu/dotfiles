@@ -45,10 +45,16 @@ HISTIGNORE="history:exit:top:ls:clear:mount:python"
 PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[00m\]\$ "
 
 # aliases
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias diff='diff --color=auto'
+if [ "$(uname)" = "Linux" ];then
+	alias ls='ls --color=auto'
+	alias diff='diff --color=auto'
+elif [ "$(uname)" = "FreeBSD" ];then
+	alias ls='ls -G'
+fi
+# non-posix, but exists on freebsd
 alias rm='rm -I'
+alias grep='grep --color=auto'
+
 [ -f /usr/bin/vimpager ] && alias less=vimpager
 alias sway="env LC_ALL=zh_TW.utf8 sway"
 alias mcshl="env _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -Xnoclassgc -XX:MaxGCPauseMillis=50 -XX:+UseG1GC $_JAVA_OPTIONS\" mcshl"
