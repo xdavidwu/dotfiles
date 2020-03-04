@@ -1,4 +1,5 @@
 source ~/.config/mutt/gpg.muttrc
+source ~/.config/sensitive/mutt/apppass.muttrc
 set from = "xdavidwuph@gmail.com"
 set realname = "David Wu"
 set imap_user = "xdavidwuph"
