@@ -55,6 +55,8 @@ fi
 alias rm='rm -I'
 alias grep='grep --color=auto'
 
+alias sftp='sftp -o Compression=no'
+
 [ -f /usr/bin/vimpager ] && alias less=vimpager
 alias sway="env LC_ALL=zh_TW.utf8 sway"
 alias mcshl="env _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -Xnoclassgc -XX:MaxGCPauseMillis=50 -XX:+UseG1GC $_JAVA_OPTIONS\" mcshl"
