@@ -12,6 +12,7 @@ set backupdir=$HOME/.cache/vim/backup | call mkdir(&backupdir, 'p', 0700)
 set directory=$HOME/.cache/vim/swap   | call mkdir(&directory, 'p', 0700)
 set viewdir=$HOME/.cache/vim/view     | call mkdir(&viewdir, 'p', 0700)
 set undodir=$HOME/.cache/vim/undo     | call mkdir(&undodir, 'p', 0700)
+let g:netrw_home=$HOME."/.cache/vim"
 let g:ale_set_signs=0
 let g:c_parse_compile_commands=1
 let g:ale_linters={
