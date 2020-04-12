@@ -147,4 +147,5 @@ while [ -n "$LVLSTR" ];do
 done
 PS1="$PS1A\[\033[0m\]$PS1"
 export PTERM
+alias rssh="$(which ssh)"
 alias ssh="env TERM=$PTERM ssh"
