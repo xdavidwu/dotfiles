@@ -77,6 +77,14 @@ batlvl() {
 		$(cat /sys/class/power_supply/BAT0/charge_full_design) ))
 }
 
+play-playlist() {
+	ARGS=
+	for list in $@;do
+		ARGS="$ARGS --playlist=$list"
+	done
+	mpv --ytdl-raw-options=audio-format=best --no-video $ARGS
+}
+
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
