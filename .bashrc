@@ -36,6 +36,7 @@ export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 export MYSQL_HISTFILE="$XDG_CACHE_HOME/mysql_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # shell options
 HISTCONTROL=ignoredups
