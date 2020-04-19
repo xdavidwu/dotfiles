@@ -215,4 +215,3 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86Search exec playerctl shuffle #TODO
-seat * keyboard_grouping none
