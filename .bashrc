@@ -10,7 +10,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # be careful that composer does not uses XDG when no XDG_* defined
-export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
+export PATH="$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
 
 # XDG workarounds
 # policy: (!customized) => ((PMs) => data, (!PMs && !important) => cache)
