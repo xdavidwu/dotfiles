@@ -1,4 +1,4 @@
-#termcapinfo xterm* ti@:te@
+termcapinfo xterm* ti@:te@
 mousetrack on
 startup_message off
 vbell off
