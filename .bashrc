@@ -20,8 +20,10 @@ export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 if [ -n "$(grep -F 'ID=arch' /etc/os-release 2>/dev/null)" ] ||
 		[ -n "$(grep -F 'ID_LIKE=arch' /etc/os-release 2>/dev/null)" ];then
 	export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+	export VIMPAGER_RC="$XDG_CONFIG_HOME/vim/vimrc"
 else
 	export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc-nonarch"
+	export VIMPAGER_RC="$XDG_CONFIG_HOME/vim/vimrc-nonarch"
 fi
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
