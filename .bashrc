@@ -64,6 +64,8 @@ alias sftp='sftp -o Compression=no'
 alias sway="env LC_ALL=zh_TW.utf8 sway"
 alias mcshl="env _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseG1GC -Xaggressive $_JAVA_OPTIONS\" mcshl"
 
+alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
+
 # TODO output quick switches for xps with sway
 alias hdmiclone='xrandr --output HDMI-1 --mode 1360x768 --pos 0x0'
 alias hdmiright='xrandr --output HDMI-1 --mode 1920x1080 --right-of LVDS-1'
