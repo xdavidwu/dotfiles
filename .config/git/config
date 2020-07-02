@@ -12,3 +12,5 @@
 	path = ~/.config/git/config-cscc
 [includeIf "gitdir:~/automated/"]
 	path = ~/.config/git/config-automated
+[pull]
+	rebase = true
