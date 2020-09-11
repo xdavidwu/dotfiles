@@ -174,9 +174,9 @@ hide_edge_borders both
 focus_on_window_activation urgent
 
 #bindsym Print exec "export STAMP=$(date '+%Y%m%d-%H%M%S'); import -window root ~/Pictures/$STAMP.png; notify-send -i camera Screenshot \\"$STAMP.png saved\\" "
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioMute exec pactl set-sink-mute $(env LC_ALL=C pactl info | sed -En 's/Default Sink: (.*)/\1/p') toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(env LC_ALL=C pactl info | sed -En 's/Default Sink: (.*)/\1/p') -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(env LC_ALL=C pactl info | sed -En 's/Default Sink: (.*)/\1/p') +5%
 
 mode "Minecraft" {
 	bindsym $mod+f exec ~/sources/mcafk/mcrightclick.sh on  
