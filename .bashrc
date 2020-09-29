@@ -105,7 +105,7 @@ export QT_QPA_PLATFORM=wayland-egl
 export MESA_LOADER_DRIVER_OVERRIDE=iris
 export SDL_VIDEODRIVER=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=wayland
 export QT_IM_MODULE=fcitx
 
 # shell level prompt
