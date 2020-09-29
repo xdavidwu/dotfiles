@@ -204,7 +204,7 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] {
 	resize set 480 270
 }
 
-for_window [app_id="firefox" title="^Extension: \(Open in Browser\) - Opening "] floating enable
+for_window [app_id="firefox" title="^Opening "] floating enable
 
 for_window [app_id="firefox" title="^Nightly - Sharing Indicator"] {
 	floating enable
