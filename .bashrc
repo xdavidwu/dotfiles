@@ -92,6 +92,19 @@ play-playlist() {
 	mpv --ytdl-raw-options=audio-format=best --no-video $ARGS
 }
 
+psave() {
+	if [ "$1" = "perf" ];then
+		echo powersave perfomance
+		echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
+	elif [ "$1" = "off" ];then
+		echo powersave off
+		echo balance_performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
+	else
+		echo powersave on
+		echo power | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
+	fi
+}
+
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
