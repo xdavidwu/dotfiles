@@ -62,7 +62,6 @@ cpu_temperature 0{
 volume master {
         format = "S: %volume"
         format_muted = "S: muted (%volume)"
-        device = "pulse"
 	separator_block_width = 11
 }
 
