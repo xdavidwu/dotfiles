@@ -22,5 +22,6 @@ let g:ale_linters={
 "let g:ale_c_clangd_options='--compile-commands-dir=.'
 let g:ale_php_phpcs_options = "--standard=PSR2"
 let g:ale_completion_enabled=1
+let g:ale_java_javac_classpath="/opt/android-sdk/platforms/android-30/android.jar"
 let g:SuperTabDefaultCompletionType='<c-n>'
 autocmd User ALELintPost let tmp=ale#statusline#Count(bufnr(''))['total'] | set rulerformat=%{tmp},%l,%c%V%=%P
