@@ -105,6 +105,11 @@ psave() {
 	fi
 }
 
+timesync() {
+	sudo busybox ntpd -dqn -p time.stdtime.gov.tw
+	sudo busybox hwclock -wu
+}
+
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
