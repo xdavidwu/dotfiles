@@ -7,5 +7,5 @@ for repo in android_packages_apps_Backgrounds android_packages_apps_Eleven andro
 	echo $repo
 	git pull
 	git pull upstream $(git branch --show-current)
-	git push
+	git push -f
 done
