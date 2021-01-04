@@ -9,6 +9,7 @@ set postponed ="+[Gmail]/Drafts"
 set smtp_url = "smtp://xdavidwuph@smtp.gmail.com:587/"
 set ssl_force_tls = yes
 set imap_keepalive = 900
+set header_cache =  "~/.cache/mutt"
 
 set sort = 'reverse-last-date-received'
 
