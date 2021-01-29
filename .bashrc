@@ -62,7 +62,7 @@ alias sftp='sftp -o Compression=no'
 
 [ -f /usr/bin/vimpager ] && alias less=vimpager
 alias sway="env LC_ALL=zh_TW.utf8 sway"
-alias mcshl="env _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseZGC -Xaggressive $_JAVA_OPTIONS\" mcshl"
+alias mcshl="env ALSOFT_DRIVERS=alsa _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseZGC -Xaggressive $_JAVA_OPTIONS\" mcshl"
 alias tstoggle="swaymsg input 1267:9454:ELAN24EE:00_04F3:24EE events toggle"
 
 alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
