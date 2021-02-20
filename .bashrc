@@ -68,6 +68,7 @@ alias tstoggle="swaymsg input 1267:9454:ELAN24EE:00_04F3:24EE events toggle"
 alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
 
 alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.eglo.ga/ci-modulize/archlinux-docker-ci/base-devel sh"
+alias composer7="php7 /usr/bin/composer"
 
 # TODO output quick switches for xps with sway
 alias hdmiclone='xrandr --output HDMI-1 --mode 1360x768 --pos 0x0'
