@@ -33,6 +33,7 @@ export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CACHE_HOME/java
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export PARALLEL_HOME="$XDG_CACHE_HOME/parallel"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_GLOBALCONFIG="$XDG_CONFIG_HOME/sensitive/npm/npmrc"
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
