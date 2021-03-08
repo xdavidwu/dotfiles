@@ -3,3 +3,5 @@ set colored-stats on
 set completion-query-items 512
 set show-all-if-unmodified on
 set skip-completed-text on
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
