@@ -1,7 +1,7 @@
 exec fcitx-autostart
 exec mako
 exec ~/.local/libexec/title-watch.sh
-exec sh -c 'wlchewing -e 2>/tmp/wlchewing.log'
+exec sh -c 'wlchewing -e -d no 2>/tmp/wlchewing.log'
 output eDP-1 scale 3
 #for_window [title="."] title_format "%title %app_id %class %instance %shell"
 for_window [title="."] title_format "%title<big> </big>"
