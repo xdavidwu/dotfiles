@@ -113,6 +113,10 @@ timesync() {
 	sudo busybox hwclock -wu
 }
 
+sleepto() {
+	sleep $(($(date --date="$1" +%s) - $(date +%s)))
+}
+
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
