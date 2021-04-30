@@ -1,3 +1,5 @@
+[core]
+	hookspath = ~/cscc/githooks
 [user]
 	name = Ping-Hao Wu
 	email = wuph0612@cs.nctu.edu.tw
