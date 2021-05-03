@@ -185,3 +185,6 @@ alias ssh="env TERM=$PTERM ssh"
 
 _completion_loader ssh 2>/dev/null
 [ $? -eq 124 ] && complete -F _ssh rssh
+
+_completion_loader sudo 2>/dev/null
+[ $? -eq 124 ] && complete -F _sudo doas
