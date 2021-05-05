@@ -99,19 +99,19 @@ play-playlist() {
 psave() {
 	if [ "$1" = "perf" ];then
 		echo powersave perfomance
-		echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
+		echo performance | doas tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
 	elif [ "$1" = "off" ];then
 		echo powersave off
-		echo balance_performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
+		echo balance_performance | doas tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
 	else
 		echo powersave on
-		echo power | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
+		echo power | doas tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference >/dev/null
 	fi
 }
 
 timesync() {
-	sudo busybox ntpd -dqn -p time.stdtime.gov.tw
-	sudo busybox hwclock -wu
+	doas busybox ntpd -dqn -p time.stdtime.gov.tw
+	doas busybox hwclock -wu
 }
 
 sleepto() {
