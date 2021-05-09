@@ -217,4 +217,4 @@ for_window [app_id="firefox" title="^Nightly - Sharing Indicator"] {
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
-bindsym XF86Search exec playerctl shuffle #TODO
+bindsym XF86Search exec playerctl shuffle Toggle
