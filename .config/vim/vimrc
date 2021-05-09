@@ -26,3 +26,5 @@ let g:ale_completion_enabled=1
 let g:ale_java_javac_classpath="/opt/android-sdk/platforms/android-30/android.jar"
 let g:SuperTabDefaultCompletionType='<c-n>'
 autocmd User ALELintPost let tmp=ale#statusline#Count(bufnr(''))['total'] | set rulerformat=%{tmp},%l,%c%V%=%P
+autocmd InsertEnter * silent !echo -en "\e[?737769h"
+autocmd InsertLeave * silent !echo -en "\e[?737769l"
