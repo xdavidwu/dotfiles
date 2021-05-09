@@ -155,7 +155,7 @@ case "$PCMD" in
 	sshd*)
 		PTERM="${PTERM}s"
 		;;
-	*term*)
+	*term*|foot*)
 		PTERM="$TERM/"
 		;;
 	*)
