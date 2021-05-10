@@ -118,6 +118,17 @@ sleepto() {
 	sleep $(($(date --date="$1" +%s) - $(date +%s)))
 }
 
+imgcat_max_pixels() {
+	TREE=$(swaymsg -t get_tree)
+	SCALE=$(echo "$TREE" | jq 'getpath(path(.nodes[]|..|select(.focused? == true))[0:2]).scale')
+	SIZE=$(echo "$TREE" | jq '.nodes[]|..|select(.focused? == true).window_rect|.width,.height')
+	echo $(($SCALE * $(echo "$SIZE" | head -n 1)))x$(($SCALE * $(($(echo "$SIZE" | tail -n 1) - 20))))
+}
+
+imgcat() {
+	convert $@ -resize $(imgcat_max_pixels)\> sixel:-
+}
+
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
