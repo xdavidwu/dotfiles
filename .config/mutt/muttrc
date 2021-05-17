@@ -1,5 +1,4 @@
 source ~/.config/mutt/gpg.muttrc
-source ~/.config/sensitive/mutt/apppass.muttrc
 set from = "xdavidwuph@gmail.com"
 set realname = "David Wu"
 set imap_user = "xdavidwuph"
@@ -10,6 +9,8 @@ set smtp_url = "smtp://xdavidwuph@smtp.gmail.com:587/"
 set ssl_force_tls = yes
 set imap_keepalive = 900
 set header_cache =  "~/.cache/mutt"
+set imap_pass = `pass gmail-apppass`
+set smtp_pass = `pass gmail-apppass`
 
 set sort = 'reverse-last-date-received'
 
