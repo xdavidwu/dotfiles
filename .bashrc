@@ -40,6 +40,7 @@ export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 export MYSQL_HISTFILE="$XDG_CACHE_HOME/mysql_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 
 # shell options
 HISTCONTROL=ignoredups
