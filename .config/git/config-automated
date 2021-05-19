@@ -1,2 +1,4 @@
 [commit]
 	gpgSign = false
+[push]
+	gpgSign = false

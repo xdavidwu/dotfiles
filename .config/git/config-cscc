@@ -5,3 +5,5 @@
 	email = wuph0612@cs.nctu.edu.tw
 [commit]
 	gpgSign = false
+[push]
+	gpgSign = false

@@ -3,6 +3,8 @@
 	email = xdavidwuph@gmail.com
 [commit]
 	gpgSign = true
+[push]
+	gpgSign = if-asked
 [sendemail]
 	smtpEncryption = tls
 	smtpServer = smtp.gmail.com
