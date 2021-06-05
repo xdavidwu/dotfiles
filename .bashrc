@@ -72,6 +72,7 @@ alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
 alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.eglo.ga/ci-modulize/archlinux-docker-ci/base-devel sh"
 alias composer7="php7 /usr/bin/composer"
 alias composer17="php7 /usr/bin/composer1"
+alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(0, termios.TIOCGWINSZ, '        ')))\""
 
 # TODO output quick switches for xps with sway
 alias hdmiclone='xrandr --output HDMI-1 --mode 1360x768 --pos 0x0'
@@ -120,10 +121,10 @@ sleepto() {
 }
 
 imgcat_max_pixels() {
-	TREE=$(swaymsg -t get_tree)
-	SCALE=$(echo "$TREE" | jq 'getpath(path(.nodes[]|..|select(.focused? == true))[0:2]).scale')
-	SIZE=$(echo "$TREE" | jq '.nodes[]|..|select(.focused? == true).window_rect|.width,.height')
-	echo $(($SCALE * $(echo "$SIZE" | head -n 1)))x$(($SCALE * $(($(echo "$SIZE" | tail -n 1) - 20))))
+	tiocgwinsz | (
+		read MROW MCOL MX MY
+		echo ${MX}x$(($MY / $MROW * $(($MROW - 1))))
+	)
 }
 
 imgcat() {
