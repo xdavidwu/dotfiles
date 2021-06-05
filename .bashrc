@@ -134,6 +134,10 @@ imgcat() {
 	convert "$@" $EXTRA sixel:-
 }
 
+vidcat() {
+	ffmpeg -i "$@" -loglevel warning -vframes 1 -f apng - | imgcat -
+}
+
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
