@@ -130,7 +130,7 @@ imgcat() {
 	EXTRA=
 	MAX=$(imgcat_max_pixels 2>/dev/null)
 	[ -n "$MAX" ] && EXTRA="-resize ${MAX}>"
-	convert $@ $EXTRA sixel:-
+	convert "$@" $EXTRA sixel:-
 }
 
 # application envs
