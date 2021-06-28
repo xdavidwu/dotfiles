@@ -138,6 +138,10 @@ vidcat() {
 	ffmpeg -i "$@" -loglevel warning -vframes 1 -f apng - | imgcat -
 }
 
+notify() {
+	echo -ne "\x1b]777;notify;title;$@\x1b"'\\'
+}
+
 # application envs
 # policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty)
