@@ -22,3 +22,6 @@ let g:ale_php_phpcs_options = "--standard=PSR2"
 let g:ale_completion_enabled=1
 let g:SuperTabDefaultCompletionType='<c-n>'
 autocmd User ALELintPost let tmp=ale#statusline#Count(bufnr(''))['total'] | set rulerformat=%{tmp},%l,%c%V%=%P
+autocmd InsertEnter * silent !echo -en "\e[?737769h"
+autocmd InsertLeave * silent !echo -en "\e[?737769l"
+autocmd VimLeave * silent !echo -en "\e[?737769h"
