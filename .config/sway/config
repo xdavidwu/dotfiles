@@ -5,7 +5,6 @@ exec ~/.local/libexec/title-watch.sh
 exec sh -c 'wlchewing -e -d no -f "Noto Sans CJK TC 11" -b#303030 -s#80cbc4 -S#101a19 2>/tmp/wlchewing.log'
 output eDP-1 scale 3
 #for_window [title="."] title_format "%title %app_id %class %instance %shell"
-for_window [title="."] title_format "%title<big> </big>"
 #xwayland disable 
 
 set $mod Mod4
