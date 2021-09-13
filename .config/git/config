@@ -3,6 +3,7 @@
 	email = xdavidwuph@gmail.com
 [commit]
 	gpgSign = true
+	cleanup = scissors
 [push]
 	gpgSign = if-asked
 [sendemail]
