@@ -191,8 +191,8 @@ input 1739:30383:DELL07E6:00_06CB:76AF_Touchpad tap enabled
 input 1267:9454:ELAN24EE:00_04F3:24EE map_to_output eDP-1
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 output "*" background ~/.local/share/backgrounds/20618.jpg fill
-bindsym XF86MonBrightnessUp exec 'notify-send Brightness "Birghtness set to $(blctl +5%)" -i /usr/share/icons/Arc/status/symbolic/brightness-display-symbolic.svg'
-bindsym XF86MonBrightnessDown exec 'notify-send Brightness "Birghtness set to $(blctl -5%)" -i /usr/share/icons/Arc/status/symbolic/brightness-display-symbolic.svg'
+bindsym XF86MonBrightnessUp exec 'notify-send Brightness "Brightness set to $(blctl +5%)" -i /usr/share/icons/Arc/status/symbolic/brightness-display-symbolic.svg'
+bindsym XF86MonBrightnessDown exec 'notify-send Brightness "Brightness set to $(blctl -5%)" -i /usr/share/icons/Arc/status/symbolic/brightness-display-symbolic.svg'
 bindsym Print exec 'export STAMP=$(date +%Y%m%d-%H%M%S); grim ~/Pictures/$STAMP.png; notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved" '
 bindsym $mod+Print exec 'STAMP=$(date +%Y%m%d-%H%M%S);COR=$(slurp); grim -g "$COR" ~/Pictures/$STAMP.png; notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved, $COR" '
 
