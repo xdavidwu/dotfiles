@@ -56,6 +56,7 @@ if [ "$(uname)" = "Linux" ];then
 elif [ "$(uname)" = "FreeBSD" ];then
 	alias ls='ls -G'
 fi
+alias mvi='mpv --config-dir=$HOME/.config/mvi'
 # non-posix, but exists on freebsd
 alias rm='rm -I'
 alias grep='grep --color=auto'
