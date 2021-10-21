@@ -51,10 +51,10 @@ HISTIGNORE="history:exit:top:ls:clear:mount:python"
 PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\${?#0}\[\033[0m\]\\$ "
 
 # aliases
-if [ "$(uname)" = "Linux" ];then
+if [ "${OSTYPE%%-*}" = "linux" ];then
 	alias ls='ls --color=auto'
 	alias diff='diff --color=auto'
-elif [ "$(uname)" = "FreeBSD" ];then
+elif [ "$(OSTYPE%%[0-9]*)" = "freebsd" ];then
 	alias ls='ls -G'
 fi
 alias mvi='mpv --config-dir=$HOME/.config/mvi'
@@ -119,7 +119,7 @@ timesync() {
 }
 
 sleepto() {
-	sleep $(($(date --date="$1" +%s) - $(date +%s)))
+	sleep $(($(date --date="$1" +%s) - $EPOCHSECONDS))
 }
 
 imgcat_max_pixels() {
