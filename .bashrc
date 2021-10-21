@@ -47,7 +47,13 @@ HISTCONTROL=ignoredups
 HISTSIZE=2048
 HISTFILESIZE=2048
 HISTIGNORE="history:exit:top:ls:clear:mount:python"
-PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[00m\]\\$ "
+
+__ret_false () {
+	RET=$?
+	[ $RET -ne 0 ] && printf " $RET"
+}
+
+PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\$(__ret_false)\[\033[0m\]\\$ "
 
 # aliases
 if [ "$(uname)" = "Linux" ];then
