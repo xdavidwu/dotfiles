@@ -76,16 +76,6 @@ alias composer7="php7 /usr/bin/composer"
 alias composer17="php7 /usr/bin/composer1"
 alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(0, termios.TIOCGWINSZ, '        ')))\""
 
-# TODO output quick switches for xps with sway
-alias hdmiclone='xrandr --output HDMI-1 --mode 1360x768 --pos 0x0'
-alias hdmiright='xrandr --output HDMI-1 --mode 1920x1080 --right-of LVDS-1'
-alias vgaclone='xrandr --newmode "1360x768_60.00"   84.75  1360 1432 1568 1776  768 771 781 798 -hsync +vsync;
-xrandr --addmode VGA-1 "1360x768_60.00"
-xrandr --output VGA-1 --mode "1360x768_60.00" --pos 0x0'
-alias vgaright='xrandr --output VGA-1 --mode 1920x1080 --right-of LVDS-1'
-alias bookmode='xrandr --output LVDS-1 --rotate right && xinput set-prop "SynPS/2 Synaptics TouchPad" --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1'
-alias normalmode='xrandr --output LVDS-1 --rotate normal && xinput set-prop "SynPS/2 Synaptics TouchPad" --type=float "Coordinate Transformation Matrix" 0 0 0 0 0 0 0 0 0'
-
 # functions
 batlvl() {
 	echo $(($(cat /sys/class/power_supply/BAT0/charge_now) * 100 /
