@@ -170,7 +170,7 @@ case "$TERM" in
 		;;
 esac
 # bash complains if $() faces null
-PCMD=$(tr -d '\000' < /proc/$PPID/cmdline)
+[ -f "/proc/$PPID/cmdline" ] && PCMD=$(tr -d '\000' < /proc/$PPID/cmdline)
 [ -z "$PTERM" ] && INITLVL=1
 PTERM=${PTERM:-$TERM/}
 case "$PCMD" in
