@@ -74,6 +74,8 @@ alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
 alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.xdavidwu.link/ci-modulize/archlinux-docker-ci/base-devel sh"
 alias composer7="php7 /usr/bin/composer"
 alias composer17="php7 /usr/bin/composer1"
+alias artisan="php artisan"
+alias artisan7="php7 artisan"
 alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(0, termios.TIOCGWINSZ, '        ')))\""
 
 # functions
@@ -201,3 +203,6 @@ _completion_loader ssh 2>/dev/null
 
 _completion_loader sudo 2>/dev/null
 [ $? -eq 124 ] && complete -F _sudo doas
+
+_completion_loader symfony-autocomplete 2>/dev/null
+[ $? -eq 124 ] && complete -F _symfony artisan7
