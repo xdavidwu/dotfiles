@@ -204,4 +204,4 @@ _completion_loader sudo 2>/dev/null
 [ $? -eq 124 ] && complete -F _sudo doas
 
 _completion_loader symfony-autocomplete 2>/dev/null
-[ $? -eq 124 ] && complete -F _symfony artisan7
+[ $? -eq 124 ] && complete -F _symfony artisan artisan7
