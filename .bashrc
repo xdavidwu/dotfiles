@@ -10,7 +10,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # be careful that composer does not uses XDG when no XDG_* defined
-export PATH="$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
+PATH="$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
 
 # XDG workarounds
 # policy: (!customized) => ((PMs) => data, (!PMs && !important) => cache)
@@ -135,16 +135,13 @@ notify() {
 }
 
 # application envs
-# policy: should here even if global like /etc/environments
 export GPG_TTY=$(tty 2>/dev/null)
 [ -f /usr/bin/vimpager ] && export PAGER=vimpager
 export LESS='-S -R'
 export LESSHISTFILE=-
 export EDITOR=vim
-export AIRCRACK_LIBEXEC_PATH=/usr/lib/aircrack-ng
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland-egl
-export MESA_LOADER_DRIVER_OVERRIDE=iris
 export SDL_VIDEODRIVER=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export GTK_IM_MODULE=wayland
