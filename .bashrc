@@ -48,7 +48,7 @@ HISTSIZE=2048
 HISTFILESIZE=2048
 HISTIGNORE="history:exit:top:ls:clear:mount:python"
 
-PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\${?#0}\[\033[0m\]\\$ "
+PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\]\${?#0}\[\033[0m\]\\$ "
 
 # aliases
 if [ "${OSTYPE%%-*}" = "linux" ];then
