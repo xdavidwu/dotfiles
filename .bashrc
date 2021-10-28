@@ -205,3 +205,4 @@ _completion_loader sudo 2>/dev/null
 
 _completion_loader symfony-autocomplete 2>/dev/null
 [ $? -eq 124 ] && complete -F _symfony artisan artisan7
+true
