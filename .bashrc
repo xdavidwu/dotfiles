@@ -54,7 +54,7 @@ PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\${?#0}\
 if [ "${OSTYPE%%-*}" = "linux" ];then
 	alias ls='ls --color=auto'
 	alias diff='diff --color=auto'
-elif [ "$(OSTYPE%%[0-9]*)" = "freebsd" ];then
+elif [ "${OSTYPE%%[0-9]*}" = "freebsd" ];then
 	alias ls='ls -G'
 fi
 alias mvi='mpv --config-dir=$HOME/.config/mvi'
