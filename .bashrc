@@ -197,6 +197,8 @@ export PTERM
 alias rssh="command ssh"
 alias ssh="env TERM=$PTERM ssh"
 
+! type _completion_loader 2>/dev/null && [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+
 _completion_loader ssh 2>/dev/null
 [ $? -eq 124 ] && complete -F _ssh rssh
 
