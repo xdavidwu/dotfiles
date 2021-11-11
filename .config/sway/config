@@ -1,4 +1,4 @@
-exec fcitx-autostart
+exec pipewire
 exec mako
 exec foot --server
 exec ~/.local/libexec/title-watch.sh
