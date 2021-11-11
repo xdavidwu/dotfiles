@@ -214,6 +214,11 @@ for_window [app_id="firefox" title="^Nightly - Sharing Indicator"] {
 	border none
 }
 
+for_window [app_id="firefox" title="^Firefox - Sharing Indicator"] {
+	floating enable
+	border none
+}
+
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
