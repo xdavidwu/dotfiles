@@ -7,9 +7,9 @@
 [push]
 	gpgSign = if-asked
 [pager]
-	log = (/usr/share/git/diff-highlight/diff-highlight 2>/dev/null || cat) | less
-	show = (/usr/share/git/diff-highlight/diff-highlight 2>/dev/null || cat) | less
-	diff = (/usr/share/git/diff-highlight/diff-highlight 2>/dev/null || cat) | less
+	log = (diff-highlight 2>/dev/null || /usr/share/git/diff-highlight/diff-highlight 2>/dev/null || cat) | less
+	show = (diff-highlight 2>/dev/null || /usr/share/git/diff-highlight/diff-highlight 2>/dev/null || cat) | less
+	diff = (diff-highlight 2>/dev/null || /usr/share/git/diff-highlight/diff-highlight 2>/dev/null || cat) | less
 [sendemail]
 	smtpEncryption = tls
 	smtpServer = smtp.gmail.com
