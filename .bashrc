@@ -72,6 +72,7 @@ alias tstoggle="swaymsg input 1267:9454:ELAN24EE:00_04F3:24EE events toggle"
 alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
 
 alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.xdavidwu.link/ci-modulize/archlinux-docker-ci/base-devel sh"
+alias abuildsh="podman run -itu builder -w /home/builder -v .:/home/builder --userns keep-id registry.xdavidwu.link/ci-modulize/abuild:edge"
 alias composer7="php7 /usr/bin/composer"
 alias artisan="php artisan"
 alias artisan7="php7 artisan"
