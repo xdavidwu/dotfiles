@@ -125,7 +125,9 @@ imgcat() {
 	EXTRA=
 	MAX=$(imgcat_max_pixels 2>/dev/null)
 	[ -n "$MAX" ] && EXTRA="-resize ${MAX}>"
-	convert "$@" $EXTRA sixel:-
+	for i; do
+		convert "$i" $EXTRA sixel:-
+	done
 }
 
 vidcat() {
