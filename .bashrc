@@ -62,7 +62,7 @@ alias mvi='mpv --config-dir=$HOME/.config/mvi'
 alias rm='rm -I'
 alias grep='grep --color=auto'
 
-alias sftp='sftp -o Compression=no'
+alias sftp='sftp -p -o Compression=no'
 
 [ -f /usr/bin/vimpager ] && alias less=vimpager
 alias sway="env LC_ALL=zh_TW.utf8 sway"
