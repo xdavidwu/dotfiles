@@ -77,6 +77,7 @@ alias composer7="php7 /usr/bin/composer"
 alias artisan="php artisan"
 alias artisan7="php7 artisan"
 alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(0, termios.TIOCGWINSZ, '        ')))\""
+alias dl="curl -OJLR --compressed"
 
 # functions
 batlvl() {
