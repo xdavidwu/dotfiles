@@ -12,6 +12,11 @@ export XDG_DATA_HOME="$HOME/.local/share"
 # be careful that composer does not uses XDG when no XDG_* defined
 PATH="$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
 
+if [ "$OSTYPE" = msys ]; then
+	export LC_ALL=zh_TW.UTF-8
+	PATH="/usr/bin:/bin:/mingw64/bin:$PATH"
+fi
+
 # XDG workarounds
 # policy: (!customized) => ((PMs) => data, (!PMs && !important) => cache)
 [ ! -d "$XDG_CACHE_HOME" ] && mkdir "$XDG_CACHE_HOME"
@@ -45,7 +50,8 @@ HISTIGNORE="history:exit:top:ls:clear:mount:python"
 PS1="\[\033[01;32m\]\u@\h${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\]\${?#0}\[\033[0m\]\\$ "
 
 # aliases
-if [ "${OSTYPE%%-*}" = "linux" ];then
+if [ "${OSTYPE%%-*}" = "linux" ] || [ "$OSTYPE" = "msys" ];then
+	# coreutils
 	alias ls='ls --color=auto'
 	alias diff='diff --color=auto'
 elif [ "${OSTYPE%%[0-9]*}" = "freebsd" ];then
