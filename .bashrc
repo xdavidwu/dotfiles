@@ -41,6 +41,9 @@ export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 
+# alpine exports PS1
+export -n PS1
+
 # shell options
 HISTCONTROL=ignoredups
 HISTSIZE=2048
