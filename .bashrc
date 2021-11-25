@@ -142,6 +142,14 @@ notify() {
 	echo -ne "\x1b]777;notify;title;$@\x1b"'\\'
 }
 
+st() {
+	ST_SERVER=$(curl -q https://www.speedtest.net/speedtest-servers-static.php 2>/dev/null | head -n 3 | tail -n 1 | cut -f 2 -d '"')
+	echo download
+	curl -q "$(dirname "$ST_SERVER")"/random7000x7000.jpg -m 10 >/dev/null
+	echo upload
+	head -c 100M /dev/urandom | curl -q "$ST_SERVER" -m 10 --data-binary @- >/dev/null
+}
+
 # application envs
 export GPG_TTY=$(tty 2>/dev/null)
 [ -f /usr/bin/vimpager ] && export PAGER=vimpager
