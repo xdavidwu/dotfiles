@@ -1,3 +1,12 @@
 [submodule ".config/mvi"]
 	path = .config/mvi
 	url = https://github.com/occivink/mpv-image-viewer
+[submodule ".config/vim/pack/packages/start/vim-editorconfig"]
+	path = .config/vim/pack/packages/start/vim-editorconfig
+	url = https://github.com/sgur/vim-editorconfig
+[submodule ".config/vim/pack/packages/start/supertab"]
+	path = .config/vim/pack/packages/start/supertab
+	url = https://github.com/ervandew/supertab
+[submodule ".config/vim/pack/packages/start/ale"]
+	path = .config/vim/pack/packages/start/ale
+	url = https://github.com/dense-analysis/ale
