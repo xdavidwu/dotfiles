@@ -76,7 +76,11 @@ alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
 
 alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.xdavidwu.link/ci-modulize/archlinux-docker-ci/base-devel sh"
 alias abuildsh="podman run -itu builder -w /home/builder -v .:/home/builder --userns keep-id registry.xdavidwu.link/ci-modulize/abuild:edge"
-alias composer7="php7 /usr/bin/composer"
+if [ -f /usr/bin/composer.phar ]; then
+	alias composer7="php7 /usr/bin/composer.phar"
+else
+	alias composer7="php7 /usr/bin/composer"
+fi
 alias artisan="php artisan"
 alias artisan7="php7 artisan"
 alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(0, termios.TIOCGWINSZ, '        ')))\""
@@ -221,5 +225,5 @@ _completion_loader sudo 2>/dev/null
 [ $? -eq 124 ] && complete -F _sudo doas
 
 _completion_loader symfony-autocomplete 2>/dev/null
-[ $? -eq 124 ] && complete -F _symfony artisan artisan7
+[ $? -eq 124 ] && complete -F _symfony artisan artisan7 composer7
 true
