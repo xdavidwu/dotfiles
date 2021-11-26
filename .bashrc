@@ -216,7 +216,13 @@ export PTERM
 alias rssh="command ssh"
 alias ssh="env TERM=$PTERM ssh"
 
-! type _completion_loader >/dev/null 2>&1 && [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+if ! type _completion_loader >/dev/null 2>&1; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /data/data/com.termux/files/usr/share/bash-completion/bash_completion ]; then
+		. /data/data/com.termux/files/usr/share/bash-completion/bash_completion
+	fi
+fi
 
 _completion_loader ssh 2>/dev/null
 [ $? -eq 124 ] && complete -F _ssh rssh
