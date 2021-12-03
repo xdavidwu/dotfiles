@@ -15,6 +15,7 @@
 	smtpServer = smtp.gmail.com
 	smtpUser = xdavidwuph@gmail.com
 	smtpServerPort = 587
+	annotate = yes
 [includeIf "gitdir:~/cscc/"]
 	path = ~/.config/git/config-cscc
 [includeIf "gitdir:~/automated/"]
