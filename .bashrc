@@ -5,6 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# sanitize
+# alpine exports PS1
+export -n PS1
+# arch set PROMPT_COMMAND for terminal title
+unset PROMPT_COMMAND
+
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -40,9 +46,6 @@ export MYSQL_HISTFILE="$XDG_CACHE_HOME/mysql_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
-
-# alpine exports PS1
-export -n PS1
 
 # shell options
 HISTCONTROL=ignoredups
@@ -197,21 +200,25 @@ case "$PCMD" in
 esac
 LVLSTR=${PTERM##*/}
 PS1A=
+PS1AO=
 while [ -n "$LVLSTR" ];do
 	case "$LVLSTR" in
 		S*)
 			PS1A="$PS1A\[\033[44m\]>"
+			PS1AO="$PS1AO>"
 			;;
 		s*)
 			PS1A="$PS1A\[\033[45m\]>"
+			PS1AO="$PS1AO>"
 			;;
 		n*)
 			PS1A="$PS1A\[\033[0m\]>"
+			PS1AO="$PS1AO>"
 			;;
 	esac
 	LVLSTR=${LVLSTR#?}
 done
-PS1="$PS1A\[\033[0m\]$PS1"
+PS1="\033]0;$PS1AO\u@\h${STY:+>${STY#*\.}} \w\007$PS1A\[\033[0m\]$PS1"
 export PTERM
 alias rssh="command ssh"
 alias ssh="env TERM=$PTERM ssh"
