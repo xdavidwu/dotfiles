@@ -51,7 +51,7 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 
 # shell options
-HISTCONTROL=ignoredups
+HISTCONTROL=ignoreboth
 HISTSIZE=2048
 HISTFILESIZE=2048
 HISTIGNORE="history:exit:top:ls:clear:mount:python"
