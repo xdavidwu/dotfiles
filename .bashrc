@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 shopt -s histappend
+set +H
 
 # sanitize
 # alpine exports PS1
