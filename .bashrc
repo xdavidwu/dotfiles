@@ -220,7 +220,7 @@ while [ -n "$LVLSTR" ];do
 	esac
 	LVLSTR=${LVLSTR#?}
 done
-PS1="\033]0;$PS1AO\u@\h${STY:+>${STY#*\.}} \w\007$PS1A\[\033[0m\]$PS1"
+PS1="\[\033]0;$PS1AO\u@\h${STY:+>${STY#*\.}} \w\007\]$PS1A\[\033[0m\]$PS1"
 export PTERM
 alias rssh="command ssh"
 alias ssh="env TERM=$PTERM ssh"
