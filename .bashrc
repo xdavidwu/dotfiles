@@ -194,6 +194,9 @@ case "$PCMD" in
 	sshd*)
 		PTERM="${PTERM}s"
 		;;
+	d*)
+		PTERM="${PTERM}d"
+		;;
 	*term*|foot*)
 		PTERM="$TERM/"
 		;;
@@ -214,6 +217,10 @@ while [ -n "$LVLSTR" ];do
 			PS1A="$PS1A\[\033[45m\]>"
 			PS1AO="$PS1AO>"
 			;;
+		d*)
+			PS1A="$PS1A\[\033[42m\]>"
+			PS1AO="$PS1AO>"
+			;;
 		n*)
 			PS1A="$PS1A\[\033[0m\]>"
 			PS1AO="$PS1AO>"
@@ -221,7 +228,7 @@ while [ -n "$LVLSTR" ];do
 	esac
 	LVLSTR=${LVLSTR#?}
 done
-PS1="\[\033]2;$PS1AO\u@\h${STY:+>${STY#*\.}} \w\007\]$PS1A\[\033[0m\]$PS1"
+PS1="\[\033]2;$PS1AO\u@\h${ABDUCO_SESSION:+>${ABDUCO_SESSION}}${STY:+>${STY#*\.}} \w\007\]$PS1A\[\033[0m\]$PS1"
 export PTERM
 alias rssh="command ssh"
 alias ssh="env TERM=$PTERM ssh"
