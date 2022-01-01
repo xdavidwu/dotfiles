@@ -164,6 +164,7 @@ export GPG_TTY=$(tty 2>/dev/null)
 export LESS='-S -R'
 export LESSHISTFILE=-
 export EDITOR=vim
+export DVTM_PAGER=less
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland-egl
 export SDL_VIDEODRIVER=wayland
