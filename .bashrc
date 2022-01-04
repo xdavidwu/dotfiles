@@ -13,6 +13,7 @@ set +H
 export -n PS1
 # arch set PROMPT_COMMAND for terminal title
 unset PROMPT_COMMAND
+unset _GCOMPAT_PRELOAD
 
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -24,6 +25,8 @@ PATH="$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/
 if [ "$OSTYPE" = msys ]; then
 	export LC_ALL=zh_TW.UTF-8
 	PATH="/usr/bin:/bin:/mingw64/bin:$PATH"
+elif [ "$OSTYPE" = "linux-musl" ]; then
+	_GCOMPAT_PRELOAD="LD_PRELOAD=/lib/libgcompat.so.0"
 fi
 
 # XDG workarounds
@@ -73,7 +76,7 @@ alias sftp='sftp -p -o Compression=no'
 
 [ -f /usr/bin/vimpager ] && alias less=vimpager
 alias sway="env LC_ALL=zh_TW.utf8 sway"
-alias mcshl="env ALSOFT_DRIVERS=alsa _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseZGC $_JAVA_OPTIONS\" mcshl"
+alias mcshl="env ALSOFT_DRIVERS=alsa $_GCOMPAT_PRELOAD _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseZGC $_JAVA_OPTIONS\" mcshl"
 alias tstoggle="swaymsg input 1267:9454:ELAN24EE:00_04F3:24EE events toggle"
 
 alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
