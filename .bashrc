@@ -175,6 +175,8 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export GTK_IM_MODULE=wayland
 export QT_IM_MODULE=fcitx
 
+[ ! -d "$ANDROID_HOME" ] && [ ! -d "$ANDROID_SDK_ROOT" ] && [ -d ~/android-sdk ] && export ANDROID_SDK_ROOT=~/android-sdk
+
 # shell level prompt
 # PTERM: poisoned TERM, $TERM/$LVLSTR, ssh pass TERM by default
 # if $PPID is a GUI term, treat it as a fresh start
