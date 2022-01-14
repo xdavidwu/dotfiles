@@ -9,6 +9,7 @@ highlight PmenuSbar ctermbg=none
 highlight PmenuThumb ctermbg=gray
 highlight PmenuSel ctermbg=darkgray ctermfg=white
 highlight ALEErrorLine ctermbg=darkblue
+set novisualbell
 set bg=dark
 set title
 set mouse=
