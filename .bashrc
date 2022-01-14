@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-shopt -s histappend
+shopt -s histappend extglob
 set +H
 
 # sanitize
@@ -14,6 +14,7 @@ unset _GCOMPAT_PRELOAD
 if [ "$OSTYPE" = msys ]; then
 	export LC_ALL=zh_TW.UTF-8
 	PATH="/usr/bin:/bin:/mingw64/bin:$PATH"
+	EXECIGNORE="*.!(exe)"
 elif [ "$OSTYPE" = "linux-musl" ]; then
 	_GCOMPAT_PRELOAD="LD_PRELOAD=/lib/libgcompat.so.0"
 fi
