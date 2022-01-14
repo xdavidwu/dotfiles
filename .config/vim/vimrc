@@ -10,6 +10,7 @@ highlight PmenuThumb ctermbg=gray
 highlight PmenuSel ctermbg=darkgray ctermfg=white
 highlight ALEErrorLine ctermbg=darkblue
 set novisualbell
+set laststatus=1
 set bg=dark
 set title
 set mouse=
