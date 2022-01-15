@@ -72,7 +72,7 @@ play-playlist() {
 	for list in $@;do
 		ARGS="$ARGS --playlist=$list"
 	done
-	mpv --ytdl-raw-options=audio-format=best --no-video $ARGS
+	mpv --ytdl-raw-options=audio-format=best --shuffle --slang=ja,zh-TW --sub-visibility --no-video $ARGS
 }
 
 psave() {
