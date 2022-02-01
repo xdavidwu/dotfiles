@@ -44,6 +44,7 @@ export LESS='-S -R'
 export LESSHISTFILE=-
 export EDITOR=vim
 export DVTM_PAGER=less
+export ABDUCO_CMD="dvtm -M"
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland-egl
 export SDL_VIDEODRIVER=wayland
