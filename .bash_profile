@@ -52,10 +52,14 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export GTK_IM_MODULE=wayland
 export QT_IM_MODULE=fcitx
 
-if [ ! -d "$ANDROID_HOME" ] && [ ! -d "$ANDROID_SDK_ROOT" ] && [ -d ~/android-sdk ]; then
-	export ANDROID_SDK_ROOT=~/android-sdk
-	# platform-tools also contains stuff like mke2fs, sqlite3
-	PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
+if [ ! -d "$ANDROID_HOME" ]; then
+	if [ ! -d "$ANDROID_SDK_ROOT" ] && [ -d ~/android-sdk ]; then
+		export ANDROID_SDK_ROOT=~/android-sdk
+		# platform-tools also contains stuff like mke2fs, sqlite3
+		PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
+	fi
+else
+	export ANDROID_SDK_ROOT="$ANDROID_HOME"
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
