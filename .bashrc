@@ -99,7 +99,7 @@ sleepto() {
 
 imgcat_max_pixels() {
 	tiocgwinsz | (
-		read MROW MCOL MX MY
+		IFS=' ' read MROW MCOL MX MY
 		echo ${MX}x$(($MY / $MROW * $(($MROW - 1))))
 	)
 }
