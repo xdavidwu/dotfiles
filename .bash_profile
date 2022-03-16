@@ -62,4 +62,8 @@ else
 	export ANDROID_SDK_ROOT="$ANDROID_HOME"
 fi
 
+if [ -d ~/google-cloud-sdk ]; then
+	PATH="$PATH:$HOME/google-cloud-sdk"
+fi
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc
