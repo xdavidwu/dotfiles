@@ -3,6 +3,8 @@
 [user]
 	name = Ping-Hao Wu
 	email = wuph0612@cs.nctu.edu.tw
+[credential "https://gitlab.cs.nctu.edu.tw"]
+	helper = "/usr/bin/glab auth git-credential"
 [commit]
 	gpgSign = false
 [push]
