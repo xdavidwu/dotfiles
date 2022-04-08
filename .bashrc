@@ -25,7 +25,7 @@ HISTFILE="$XDG_CACHE_HOME/bash_history"
 HISTCONTROL=ignoreboth
 HISTSIZE=2048
 HISTFILESIZE=2048
-HISTIGNORE="history:exit:top:ls:clear:mount:python"
+HISTIGNORE="history:exit:top:ls:clear"
 
 # aliases
 if [ "${OSTYPE%%-*}" = "linux" ] || [ "$OSTYPE" = "msys" ];then
