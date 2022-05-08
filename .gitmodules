@@ -10,3 +10,6 @@
 [submodule ".config/vim/pack/packages/start/editorconfig-vim"]
 	path = .config/vim/pack/packages/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule ".config/vim/pack/packages/start/hare.vim"]
+	path = .config/vim/pack/packages/start/hare.vim
+	url = https://git.sr.ht/~sircmpwn/hare.vim
