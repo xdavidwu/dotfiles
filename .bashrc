@@ -201,6 +201,8 @@ alias ssh="env TERM=$PTERM ssh"
 if ! type _completion_loader >/dev/null 2>&1; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
+	elif [ -f /usr/local/share/bash-completion/bash_completion ]; then
+		. /usr/local/share/bash-completion/bash_completion
 	elif [ -f /data/data/com.termux/files/usr/share/bash-completion/bash_completion ]; then
 		. /data/data/com.termux/files/usr/share/bash-completion/bash_completion
 	fi
