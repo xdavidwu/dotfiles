@@ -39,10 +39,14 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export ABDUCO_SOCKET_DIR="$XDG_DATA_HOME"
 
 # application envs
-[ -f /usr/bin/vimpager ] && export PAGER=vimpager
+if command -v nvimpager >/dev/null; then
+	export PAGER=nvimpager
+elif command -v vimpager >/dev/null; then
+	export PAGER=vimpager
+fi
 export LESS='-S -R'
 export LESSHISTFILE=-
-if [ -f /usr/bin/nvim ]; then
+if command -v nvim >/dev/null; then
 	export EDITOR=nvim
 	export VIMPAGER_VIM=nvim
 else
