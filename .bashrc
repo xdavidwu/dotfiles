@@ -42,7 +42,12 @@ alias grep='grep --color=auto'
 
 alias sftp='sftp -p -o Compression=no'
 
-[ -f /usr/bin/vimpager ] && alias less=vimpager
+if command -v nvimpager >/dev/null;then
+	alias less=nvimpager
+elif command -v vimpager >/dev/null;then
+	alias less=vimpager
+fi
+command -v nvim >/dev/null && alias vim=nvim
 alias sway="env LC_ALL=zh_TW.utf8 sway"
 alias mcshl="env ALSOFT_DRIVERS=alsa $_GCOMPAT_PRELOAD _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseZGC $_JAVA_OPTIONS\" mcshl"
 alias tstoggle="swaymsg input 1267:9454:ELAN24EE:00_04F3:24EE events toggle"
