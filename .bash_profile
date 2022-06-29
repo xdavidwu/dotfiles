@@ -71,4 +71,6 @@ else
 	export ANDROID_SDK_ROOT="$ANDROID_HOME"
 fi
 
+command -v hissh-agent >/dev/null && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/hissh-agent"
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc

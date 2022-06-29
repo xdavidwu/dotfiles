@@ -1,3 +1,5 @@
+exec himitsud
+exec hissh-agent
 exec pipewire
 exec mako
 exec foot --server
