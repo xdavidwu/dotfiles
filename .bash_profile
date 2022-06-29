@@ -42,7 +42,12 @@ export ABDUCO_SOCKET_DIR="$XDG_DATA_HOME"
 [ -f /usr/bin/vimpager ] && export PAGER=vimpager
 export LESS='-S -R'
 export LESSHISTFILE=-
-export EDITOR=vim
+if [ -f /usr/bin/nvim ]; then
+	export EDITOR=nvim
+	export VIMPAGER_VIM=nvim
+else
+	export EDITOR=vim
+fi
 export DVTM_PAGER=less
 export ABDUCO_CMD="dvtm -M"
 export GDK_BACKEND=wayland
