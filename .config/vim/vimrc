@@ -1,9 +1,15 @@
-if filereadable('/etc/vimrc')
-	source /etc/vimrc
-elseif filereadable('/etc/vimrc')
-	source /etc/vim/vimrc
+set packpath=$HOME/.config/vim
+if has('nvim')
+	set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo.nvim
+else
+	if filereadable('/etc/vimrc')
+		source /etc/vimrc
+	elseif filereadable('/etc/vimrc')
+		source /etc/vim/vimrc
+	endif
+	source `=glob('/usr/share/vim/vim*/defaults.vim')`
+	set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo
 endif
-source `=glob('/usr/share/vim/vim*/defaults.vim')`
 highlight Pmenu ctermbg=none ctermfg=none
 highlight PmenuSbar ctermbg=none
 highlight PmenuThumb ctermbg=gray
@@ -14,12 +20,10 @@ set laststatus=1
 set bg=dark
 set title
 set mouse=
-set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo
 set backupdir=$HOME/.cache/vim/backup | call mkdir(&backupdir, 'p', 0700)
 set directory=$HOME/.cache/vim/swap   | call mkdir(&directory, 'p', 0700)
 set viewdir=$HOME/.cache/vim/view     | call mkdir(&viewdir, 'p', 0700)
 set undodir=$HOME/.cache/vim/undo     | call mkdir(&undodir, 'p', 0700)
-set packpath=$HOME/.config/vim
 let g:is_posix=1
 let g:netrw_home=$HOME."/.cache/vim"
 let g:ale_set_signs=0
