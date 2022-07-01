@@ -41,3 +41,9 @@ autocmd User ALELintPost let tmp=ale#statusline#Count(bufnr(''))['total'] | set 
 autocmd InsertEnter * silent !echo -en "\e[?737769h"
 autocmd InsertLeave * silent !echo -en "\e[?737769l"
 autocmd VimLeave * silent !echo -en "\e[?737769h"
+if has('nvim')
+	autocmd BufReadPost *
+		\ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+		\ |   exe "normal! g`\""
+		\ | endif
+endif
