@@ -60,6 +60,7 @@ export SDL_VIDEODRIVER=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export GTK_IM_MODULE=wayland
 export QT_IM_MODULE=fcitx
+export GTK_THEME=Arc-Darker
 
 if [ ! -d "$ANDROID_HOME" ]; then
 	if [ ! -d "$ANDROID_SDK_ROOT" ] && [ -d ~/android-sdk ]; then
