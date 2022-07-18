@@ -113,7 +113,7 @@ imgcat_max_pixels() {
 }
 
 imgcat() {
-	MAX=$(imgcat_max_pixels 2>/dev/null)
+	MAX=$(imgcat_max_pixels)
 	for i; do
 		if [ -n "$MAX" ]; then
 			convert "$i" -resize "${MAX}>" sixel:-
