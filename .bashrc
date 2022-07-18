@@ -66,7 +66,7 @@ fi
 alias artisan="php8 artisan"
 alias artisan7="php7 artisan"
 alias artisan81="php81 artisan"
-alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(0, termios.TIOCGWINSZ, '        ')))\""
+alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(2, termios.TIOCGWINSZ, '        ')))\""
 alias dl="curl -OJLR --compressed"
 
 # functions
