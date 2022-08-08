@@ -200,7 +200,7 @@ bindsym XF86MonBrightnessDown exec 'notify-send Brightness "Brightness set to $(
 bindsym Print exec 'export STAMP=$(date +%Y%m%d-%H%M%S); grim ~/Pictures/$STAMP.png; notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved" '
 bindsym $mod+Print exec 'STAMP=$(date +%Y%m%d-%H%M%S);COR=$(slurp); grim -g "$COR" ~/Pictures/$STAMP.png; notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved, $COR" '
 
-for_window [app_id="firefox" title="^Picture-in-Picture$"] {
+for_window [app_id="firefox" title="^(Picture-in-Picture$|子母畫面)"] {
 	border none
 	floating enable
 	sticky enable
