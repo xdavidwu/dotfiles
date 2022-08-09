@@ -197,8 +197,8 @@ while [ -n "$LVLSTR" ];do
 	esac
 	LVLSTR=${LVLSTR#?}
 done
-PS1="\[\033[01;32m\]\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\]\${?#0}\[\033[0m\]\\$ "
-PS1="\[\033]2;$PS1AO\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \w\007\]$PS1A\[\033[0m\]$PS1"
+PS1="\[\033]133;A\033\\\\\]\[\033[01;32m\]\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\]\${?#0}\[\033[0m\]\\$ "
+PS1="\[\033]2;$PS1AO\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \w\033\\\\\]$PS1A\[\033[0m\]$PS1"
 export PTERM
 alias rssh="command ssh"
 alias ssh="env TERM=$PTERM ssh"
