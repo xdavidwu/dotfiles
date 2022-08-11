@@ -218,7 +218,7 @@ for_window [app_id="firefox" title="^Nightly - Sharing Indicator"] {
 	border none
 }
 
-for_window [app_id="firefox" title="^Firefox — Sharing Indicator"] {
+for_window [app_id="firefox" title="^Firefox — (Sharing Indicator|分享指示器)"] {
 	floating enable
 	border none
 }
