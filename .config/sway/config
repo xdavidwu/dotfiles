@@ -221,6 +221,7 @@ for_window [app_id="firefox" title="^Opening "] floating enable
 for_window [app_id="firefox" title="^Firefox — (Sharing Indicator|分享指示器)"] {
 	floating enable
 	border none
+	resize set 80 50
 }
 
 bindsym XF86AudioPlay exec playerctl play-pause
