@@ -54,13 +54,16 @@ else
 fi
 export DVTM_PAGER=less
 export ABDUCO_CMD="dvtm -M"
-export GDK_BACKEND=wayland
-export QT_QPA_PLATFORM=wayland-egl
-export SDL_VIDEODRIVER=wayland
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export GTK_IM_MODULE=wayland
-export QT_IM_MODULE=fcitx
-export GTK_THEME=Arc-Darker
+
+if [ "${OSTYPE%%-*}" = "linux" ]; then
+	export GDK_BACKEND=wayland
+	export QT_QPA_PLATFORM=wayland-egl
+	export SDL_VIDEODRIVER=wayland
+	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+	export GTK_IM_MODULE=wayland
+	export QT_IM_MODULE=fcitx
+	export GTK_THEME=Arc-Darker
+fi
 
 if [ ! -d "$ANDROID_HOME" ]; then
 	if [ ! -d "$ANDROID_SDK_ROOT" ] && [ -d ~/android-sdk ]; then
