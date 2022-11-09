@@ -3,8 +3,6 @@
 #
 
 # sanitize
-# alpine exports PS1
-export -n PS1
 # arch set PROMPT_COMMAND for terminal title
 unset PROMPT_COMMAND
 
