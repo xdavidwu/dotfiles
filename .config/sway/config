@@ -8,10 +8,10 @@ exec sh -c 'wlchewing -e -d no -f "Noto Sans CJK TC 11" -b#303030 -s#80cbc4 -S#1
 
 output eDP-1 scale 3
 output DP-2 pos 0 0
-output HDMI-A-2 pos 0 0
+output 'AOC 2269W BFAD39A000404' pos 0 0
 
-output 'BenQ Corporation BenQ BL2780 96L0214501Q' subpixel rgb
-output 'Unknown 2269W BFAD39A000404' subpixel rgb
+output 'BNQ BenQ BL2780 96L0214501Q' subpixel rgb
+output 'AOC 2269W BFAD39A000404' subpixel rgb
 
 #for_window [title="."] title_format "%title %app_id %class %instance %shell"
 #xwayland disable 
