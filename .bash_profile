@@ -36,6 +36,14 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export ABDUCO_SOCKET_DIR="$XDG_DATA_HOME"
 
+# go phone home stuff
+export GOPROXY=direct
+export GOSUMDB=off
+# more for the future
+export GOTELEMETRY=off
+# wtf?
+export GOTOOLCHAIN=local
+
 # application envs
 if command -v nvimpager >/dev/null; then
 	export PAGER=nvimpager
