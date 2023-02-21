@@ -13,6 +13,8 @@ output 'AOC 2269W BFAD39A000404' pos 0 0
 output 'BNQ BenQ BL2780 96L0214501Q' subpixel rgb
 output 'AOC 2269W BFAD39A000404' subpixel rgb
 
+bindswitch lid:toggle output eDP-1 toggle
+
 #for_window [title="."] title_format "%title %app_id %class %instance %shell"
 #xwayland disable 
 
