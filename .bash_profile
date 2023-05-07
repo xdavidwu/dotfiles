@@ -11,7 +11,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # be careful that composer does not uses XDG when no XDG_* defined
-PATH="$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
+PATH="$HOME/go/bin:$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
 
 # XDG workarounds
 [ ! -d "$XDG_CACHE_HOME" ] && mkdir "$XDG_CACHE_HOME"
