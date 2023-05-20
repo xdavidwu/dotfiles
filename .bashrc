@@ -57,15 +57,11 @@ alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
 alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.xdavidwu.link/ci-modulize/archlinux-docker-ci/base-devel sh"
 alias abuildsh="podman run -itu builder -w /home/builder -v .:/home/builder --userns keep-id registry.xdavidwu.link/ci-modulize/abuild:edge"
 if [ -f /usr/bin/composer.phar ]; then
-	alias composer7="php7 /usr/bin/composer.phar"
-	alias composer8="php8 /usr/bin/composer.phar"
-else
-	alias composer7="php7 /usr/bin/composer"
-	alias composer8="php8 /usr/bin/composer"
+	alias composer81="php81 /usr/bin/composer.phar"
+	alias composer="php82 /usr/bin/composer.phar"
 fi
-alias artisan8="php8 artisan"
-alias artisan7="php7 artisan"
-alias artisan="php81 artisan"
+alias artisan81="php81 artisan"
+alias artisan="php82 artisan"
 alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(2, termios.TIOCGWINSZ, '        ')))\""
 alias dl="curl -OJLR --compressed"
 
