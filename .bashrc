@@ -175,26 +175,26 @@ PS1AO=
 while [ -n "$LVLSTR" ];do
 	case "$LVLSTR" in
 		S*)
-			PS1A="$PS1A\[\033[44m\]>"
+			PS1A="$PS1A\[\e[44m\]>"
 			PS1AO="$PS1AO>"
 			;;
 		s*)
-			PS1A="$PS1A\[\033[45m\]>"
+			PS1A="$PS1A\[\e[45m\]>"
 			PS1AO="$PS1AO>"
 			;;
 		d*)
-			PS1A="$PS1A\[\033[42m\]>"
+			PS1A="$PS1A\[\e[42m\]>"
 			PS1AO="$PS1AO>"
 			;;
 		n*)
-			PS1A="$PS1A\[\033[0m\]>"
+			PS1A="$PS1A\[\e[0m\]>"
 			PS1AO="$PS1AO>"
 			;;
 	esac
 	LVLSTR=${LVLSTR#?}
 done
-PS1="\[\033]133;A\033\\\\\]\[\033[01;32m\]\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \[\033[01;34m\]\W\[\033[31m\]\${?#0}\[\033[0m\]\\$ "
-PS1="\[\033]2;$PS1AO\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \w\033\\\\\]$PS1A\[\033[0m\]$PS1"
+PS1="\[\e]133;A\e\\\\\]\[\e[01;32m\]\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \[\e[01;34m\]\W\[\e[31m\]\${?#0}\[\e[0m\]\\$ "
+PS1="\[\e]2;$PS1AO\u@\h${ABDUCO_SESSION:+>$ABDUCO_SESSION}${STY:+>${STY#*\.}} \w\e\\\\\]$PS1A\[\e[0m\]$PS1"
 export PTERM
 alias rssh="command ssh"
 alias ssh="env TERM=$PTERM ssh"
