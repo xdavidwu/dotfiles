@@ -116,6 +116,7 @@ imgcat() {
 		else
 			convert "$i" sixel:-
 		fi
+		echo
 	done
 }
 
