@@ -15,12 +15,14 @@ output {
 	eDP-1	scale 3
 	DP-2	pos 0 0
 
-	'AOC 2269W BFAD39A000404' {
-		pos 0 0
-		subpixel rgb
-	}
-
 	'BNQ BenQ BL2780 96L0214501Q' subpixel rgb
+
+	'Dell Inc. DELL U2422HE 5DFMNM3' pos 1920 0
+
+	'Shenzhen Soogeen Electronics Co., LTD. L01N8A 0x0000BD5C' {
+		transform 270
+		pos 9000 9000
+	}
 
 	* background ~/.local/share/backgrounds/20618.jpg fill
 }
