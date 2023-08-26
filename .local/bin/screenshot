@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+STAMP=$(date +%Y%m%d-%H%M%S)
+
+[ "$1" = crop ] && COR=$(slurp)
+grim ${COR:+"-g$COR"} ~/Pictures/$STAMP.png
+notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved${COR:+, $COR}"

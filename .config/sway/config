@@ -41,7 +41,7 @@ floating_modifier $m
 
 bindsym {
 	$m+Return	exec footclient
-	$m+d	exec j4-dmenu-desktop --dmenu='wmenu -i -n c0c0c0 -N 303030 -s ffffff -S 37474f' --no-generic --term=footclient --usage-log=$HOME/.cache/j4desktop
+	$m+d	exec j4-dmenu-desktop --dmenu='wmenu -i -n c0c0c0 -N 303030 -s ffffff -S 37474f' --no-generic --term=footclient --usage-log=$XDG_CACHE_HOME/j4desktop
 
 	$m+Shift+q	kill
 
@@ -107,8 +107,8 @@ bindsym {
 	XF86MonBrightnessUp	exec 'notify-send Brightness "Brightness set to $(blctl +5%)"'
 	XF86MonBrightnessDown	exec 'notify-send Brightness "Brightness set to $(blctl -5%)"'
 
-	Print	exec 'STAMP=$(date +%Y%m%d-%H%M%S); grim ~/Pictures/$STAMP.png; notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved"'
-	$m+Print	exec 'set -e; STAMP=$(date +%Y%m%d-%H%M%S);COR=$(slurp); grim -g "$COR" ~/Pictures/$STAMP.png; notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved, $COR"'
+	Print	exec screenshot
+	$m+Print	exec screenshot crop
 }
 
 bindgesture {
