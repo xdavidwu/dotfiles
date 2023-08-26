@@ -20,8 +20,6 @@ elif [ "$OSTYPE" = "linux-musl" ]; then
 fi
 
 HISTFILE="$XDG_CACHE_HOME/bash_history"
-
-# shell options
 HISTCONTROL=ignoreboth
 HISTSIZE=2048
 HISTFILESIZE=2048
@@ -52,24 +50,15 @@ alias sway="env LC_ALL=zh_TW.utf8 XDG_CURRENT_DESKTOP=sway sway"
 alias mcshl="env ALSOFT_DRIVERS=alsa $_GCOMPAT_PRELOAD _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseZGC $_JAVA_OPTIONS\" mcshl"
 alias tstoggle="swaymsg input 1267:9454:ELAN24EE:00_04F3:24EE events toggle"
 
-alias laravelphpcs="phpcs --standard=PSR2 app routes config tests"
-
 alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.xdavidwu.link/ci-modulize/archlinux-docker-ci/base-devel sh"
-alias abuildsh="podman run -itu builder -w /home/builder -v .:/home/builder --userns keep-id registry.xdavidwu.link/ci-modulize/abuild:edge"
 if [ -f /usr/bin/composer.phar ]; then
 	alias composer81="php81 /usr/bin/composer.phar"
 	alias composer="php82 /usr/bin/composer.phar"
 fi
 alias artisan81="php81 artisan"
 alias artisan="php82 artisan"
-alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(2, termios.TIOCGWINSZ, '        ')))\""
+alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(2, termios.TIOCGWINSZ, ' ' * 8)))\""
 alias dl="curl -OJLR --compressed"
-
-# functions
-batlvl() {
-	echo $(($(cat /sys/class/power_supply/BAT0/charge_now) * 100 /
-		$(cat /sys/class/power_supply/BAT0/charge_full_design) ))
-}
 
 play-playlist() {
 	ARGS=
@@ -111,21 +100,19 @@ imgcat_max_pixels() {
 imgcat() {
 	MAX=$(imgcat_max_pixels)
 	for i; do
-		if [ -n "$MAX" ]; then
-			convert "$i" -resize "${MAX}>" sixel:-
-		else
-			convert "$i" sixel:-
-		fi
+		convert "$i" ${MAX:+-resize ${MAX}>} sixel:-
 		echo
 	done
 }
 
 vidcat() {
-	ffmpeg -i "$@" -loglevel warning -vframes 1 -f apng - | imgcat -
+	for i; do
+		ffmpeg -i "$i" -ss 1 -loglevel warning -vframes 1 -f apng - | imgcat -
+	done
 }
 
 notify() {
-	echo -ne "\x1b]777;notify;title;$@\x1b"'\\'
+	printf "\x1b]777;notify;title;%s\x1b"'\\\n' "$@"
 }
 
 st() {
@@ -140,7 +127,7 @@ st() {
 export GPG_TTY=$(tty 2>/dev/null)
 
 # shell level prompt
-# PTERM: poisoned TERM, $TERM/$LVLSTR, ssh pass TERM by default
+# PTERM: poisoned TERM, $TERM/$LVLSTR, ssh passes TERM by default
 # if $PPID is a GUI term, treat it as a fresh start
 # if $TERM contains /, it is $PTERM passed from ssh
 case "$TERM" in
@@ -160,7 +147,7 @@ case "$PCMD" in
 	sshd*)
 		PTERM="${PTERM}s"
 		;;
-	d*)
+	dvtm*)
 		PTERM="${PTERM}d"
 		;;
 	*term*|foot*)
@@ -217,5 +204,5 @@ _completion_loader sudo 2>/dev/null
 [ $? -eq 124 ] && complete -F _sudo doas
 
 _completion_loader symfony-autocomplete 2>/dev/null
-[ $? -eq 124 ] && complete -F _symfony artisan artisan7 artisan8 composer7 composer8
+[ $? -eq 124 ] && complete -F _symfony artisan artisan81 composer composer81
 true
