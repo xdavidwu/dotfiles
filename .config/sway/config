@@ -39,6 +39,8 @@ set $m Mod4
 # Use Mouse+$m to drag floating windows to their wanted position
 floating_modifier $m
 
+set $show_brightness notify-send Brightness "Brightness set to $(brightnessctl -m | cut -f 4 -d ,)"
+
 bindsym {
 	$m+Return	exec footclient
 	$m+d	exec j4-dmenu-desktop --dmenu='wmenu -i -n c0c0c0 -N 303030 -s ffffff -S 37474f' --no-generic --term=footclient --usage-log=$XDG_CACHE_HOME/j4desktop
@@ -104,8 +106,8 @@ bindsym {
 	XF86AudioNext	exec playerctl next
 	XF86Search	exec playerctl shuffle Toggle
 
-	XF86MonBrightnessUp	exec 'notify-send Brightness "Brightness set to $(blctl +5%)"'
-	XF86MonBrightnessDown	exec 'notify-send Brightness "Brightness set to $(blctl -5%)"'
+	XF86MonBrightnessUp	exec brightnessctl set 5%+ && $show_brightness
+	XF86MonBrightnessDown	exec brightnessctl set 5%- && $show_brightness
 
 	Print	exec screenshot
 	$m+Print	exec screenshot crop
