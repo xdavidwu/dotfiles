@@ -15,9 +15,15 @@ output {
 	eDP-1	scale 3
 	DP-2	pos 0 0
 
-	'BNQ BenQ BL2780 96L0214501Q' subpixel rgb
+	'BNQ BenQ BL2780 96L0214501Q' {
+		pos 0 0
+		subpixel rgb
+	}
 
-	'Dell Inc. DELL U2422HE 5DFMNM3' pos 1920 0
+	'Dell Inc. DELL U2422HE 5DFMNM3' {
+		pos 1920 0
+		subpixel rgb
+	}
 
 	'Shenzhen Soogeen Electronics Co., LTD. L01N8A 0x0000BD5C' {
 		transform 270
