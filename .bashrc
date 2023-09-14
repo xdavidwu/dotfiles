@@ -123,6 +123,10 @@ st() {
 	head -c 100M /dev/urandom | curl -q "$ST_SERVER" -m 10 --data-binary @- >/dev/null
 }
 
+gogrep() {
+	IFS=$'\n' grep "$@" $(go list -deps -f '{{range .GoFiles}}{{printf "%s/%s\n" $.Dir .}}{{end}}')
+}
+
 # application envs
 export GPG_TTY=$(tty 2>/dev/null)
 
