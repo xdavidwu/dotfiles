@@ -59,6 +59,8 @@ alias artisan81="php81 artisan"
 alias artisan="php82 artisan"
 alias tiocgwinsz="python3 -c \"import struct, fcntl, termios; print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(2, termios.TIOCGWINSZ, ' ' * 8)))\""
 alias dl="curl -OJLR --compressed"
+alias errno="grep -h '^#define[[:space:]]*E' /usr/include/asm-generic/errno* | sed 's|^#define[[:space:]]*||'"
+alias signal="grep -h '^#define SIG' /usr/include/asm/signal.h | sed 's|^#define ||'"
 
 play-playlist() {
 	ARGS=
