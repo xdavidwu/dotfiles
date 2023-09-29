@@ -13,3 +13,6 @@
 [submodule ".config/vim/pack/packages/start/hare.vim"]
 	path = .config/vim/pack/packages/start/hare.vim
 	url = https://git.sr.ht/~sircmpwn/hare.vim
+[submodule ".config/vim/pack/packages/start/rcshell.vim"]
+	path = .config/vim/pack/packages/start/rcshell.vim
+	url = https://github.com/vim-scripts/rcshell.vim

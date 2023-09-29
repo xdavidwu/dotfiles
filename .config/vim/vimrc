@@ -1,4 +1,5 @@
 set packpath=$HOME/.config/vim
+
 if has('nvim')
 	set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo.nvim
 else
@@ -10,11 +11,13 @@ else
 	source `=glob('/usr/share/vim/vim*/defaults.vim')`
 	set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo
 endif
+
 highlight Pmenu ctermbg=none ctermfg=none
 highlight PmenuSbar ctermbg=none
 highlight PmenuThumb ctermbg=gray
 highlight PmenuSel ctermbg=darkgray ctermfg=white
 highlight ALEErrorLine ctermbg=darkblue
+
 set novisualbell
 set laststatus=1
 set bg=dark
@@ -24,6 +27,7 @@ set backupdir=$HOME/.cache/vim/backup | call mkdir(&backupdir, 'p', 0700)
 set directory=$HOME/.cache/vim/swap   | call mkdir(&directory, 'p', 0700)
 set viewdir=$HOME/.cache/vim/view     | call mkdir(&viewdir, 'p', 0700)
 set undodir=$HOME/.cache/vim/undo     | call mkdir(&undodir, 'p', 0700)
+
 let g:is_posix=1
 let g:netrw_home=$HOME."/.cache/vim"
 let g:ale_set_signs=0
@@ -37,17 +41,24 @@ let g:ale_vue_volar_init_options={
 \}
 "let g:ale_c_build_dir='build'
 "let g:ale_c_clangd_options='--compile-commands-dir=.'
-let g:ale_php_phpcs_options = "--standard=PSR2"
+let g:ale_php_phpcs_options="--standard=PSR2"
 let g:ale_completion_enabled=1
-let g:ale_java_javac_classpath=$ANDROID_SDK_ROOT."/platforms/android-31/android.jar"
+let g:ale_java_javac_classpath=$ANDROID_SDK_ROOT."/platforms/android-33/android.jar"
 let g:SuperTabDefaultCompletionType='<c-n>'
+
 autocmd User ALELintPost let tmp=ale#statusline#Count(bufnr(''))['total'] | set rulerformat=%{tmp},%l,%c%V%=%P
+
 "autocmd InsertEnter * silent !echo -en "\e[?737769h"
 "autocmd InsertLeave * silent !echo -en "\e[?737769l"
 "autocmd VimLeave * silent !echo -en "\e[?737769h"
+
 if has('nvim')
 	autocmd BufReadPost *
 		\ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
 		\ |   exe "normal! g`\""
 		\ | endif
 endif
+autocmd BufReadPost *
+	\ if getline(1) =~# '^#!.*bin/rc\%( -e\)\?$'
+	\ | set filetype=rcshell
+	\ | endif
