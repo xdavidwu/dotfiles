@@ -12,7 +12,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_DATA_DIRS="$XDG_DATA_HOME/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_HOME:/usr/local/share:/usr/share"
 
 # be careful that composer does not uses XDG when no XDG_* defined
-PATH="$HOME/go/bin:$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH"
+PATH="$HOME/go/bin:$HOME/.local/bin:$XDG_DATA_HOME/npm/bin/:$XDG_CONFIG_HOME/composer/vendor/bin/:$PATH:/usr/lib/9base/bin"
 
 # XDG workarounds
 [ ! -d "$XDG_CACHE_HOME" ] && mkdir "$XDG_CACHE_HOME"

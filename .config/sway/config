@@ -4,7 +4,7 @@ exec {
 	pipewire
 	mako
 	foot --server
-	~/.local/libexec/title-watch.sh
+	~/.local/libexec/title-watch
 	wlchewing -e -d no -f "Noto Sans CJK TC 11" -b#303030 -s#80cbc4 -S#101a19 2>/tmp/wlchewing.log
 	dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP GTK_THEME
 }

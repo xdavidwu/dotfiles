@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+import struct, fcntl, termios
+print('%d %d %d %d' % struct.unpack('4H', fcntl.ioctl(2, termios.TIOCGWINSZ, ' ' * 8)))

@@ -1,0 +1,4 @@
+#!/usr/lib/9base/bin/rc -e
+for(i) {
+	ffmpeg -i $i -ss 1 -loglevel warning -vframes 1 -f apng - | imgcat -
+}

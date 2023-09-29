@@ -1,0 +1,9 @@
+#!/usr/lib/9base/bin/rc -e
+switch($1) {
+	case p*
+		echo performance
+	case of*
+		echo balance_performance
+	case *
+		echo power
+} | doas tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference

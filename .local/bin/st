@@ -1,0 +1,6 @@
+#!/usr/lib/9base/bin/rc -e
+server=`{curl -q https://www.speedtest.net/speedtest-servers-static.php >[2=] | head -n 3 | tail -n 1 | cut -f 2 -d "}
+echo download
+curl -q $server/random7000x7000.jpg -m 10 >/dev/null || true
+echo upload
+head -c 100M /dev/urandom | curl -q $server -m 10 --data-binary @- >/dev/null || true

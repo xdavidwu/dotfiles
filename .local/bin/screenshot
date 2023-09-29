@@ -1,9 +1,6 @@
-#!/bin/sh
-
-set -e
-
-STAMP=$(date +%Y%m%d-%H%M%S)
-
-[ "$1" = crop ] && COR=$(slurp)
-grim ${COR:+"-g$COR"} ~/Pictures/$STAMP.png
-notify-send -i ~/Pictures/$STAMP.png Screenshot "$STAMP.png saved${COR:+, $COR}"
+#!/usr/lib/9base/bin/rc -e
+stamp=`{date +%Y%m%d-%H%M%S}
+coord=`{~ $1 crop && slurp}
+ifs='
+' grim `{~ $#coord 0 || echo -g$"coord} $home/Pictures/$stamp.png
+notify-send -i $home/Pictures/$stamp.png Screenshot $stamp.png' 'saved' '$"coord
