@@ -1,3 +1,4 @@
 #!/usr/lib/9base/bin/rc -e
 ifs='
-' grep '--color=always' $* `{go list -deps -f '{{range .GoFiles}}{{printf "%s/%s\n" $.Dir .}}{{end}}' ./...} | sed 's|'^$home^'|~|'
+' grep '--color=always' $* `{go list -deps -f '{{range .GoFiles}}{{printf "%s/%s\n" $.Dir .}}{{end}}' ./...} |
+	sed 's|'^`{pwd}^'/||;s|'^$home^'|~|'
