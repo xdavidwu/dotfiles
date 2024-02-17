@@ -169,7 +169,7 @@ default_border normal 1
 hide_edge_borders both
 focus_on_window_activation urgent
 
-set $ff "^firefox$"
+set $ff "^(org\.mozilla\.)?firefox$"
 
 for_window {
 	[app_id=$ff title="^(Picture-in-Picture|子母畫面)$"] {
