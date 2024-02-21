@@ -40,8 +40,6 @@ export ABDUCO_SOCKET_DIR="$XDG_DATA_HOME"
 # go phone home stuff
 export GOPROXY=direct
 export GOSUMDB=off
-# more for the future
-export GOTELEMETRY=off
 # wtf?
 export GOTOOLCHAIN=local
 
