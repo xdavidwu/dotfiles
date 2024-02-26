@@ -25,7 +25,7 @@ output {
 		subpixel rgb
 	}
 
-	'Shenzhen Soogeen Electronics Co., LTD. L01N8A 0x0000BD5C' {
+	'Shenzhen Soogeen Electronics Co., LTD. L01N8A 0x01348C5C' {
 		transform 270
 		pos 9000 9000
 	}
