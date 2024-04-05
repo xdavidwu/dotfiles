@@ -145,10 +145,10 @@ if ! type _completion_loader >/dev/null 2>&1; then
 fi
 
 _completion_loader ssh 2>/dev/null
-[ $? -eq 124 ] && complete -F _ssh rssh
+[ $? -eq 124 ] && complete -F _comp_cmd_ssh rssh
 
 _completion_loader sudo 2>/dev/null
-[ $? -eq 124 ] && complete -F _sudo doas
+[ $? -eq 124 ] && complete -F _comp_cmd_sudo doas
 
 _completion_loader symfony-autocomplete 2>/dev/null
 [ $? -eq 124 ] && complete -F _symfony artisan artisan81 composer composer81
