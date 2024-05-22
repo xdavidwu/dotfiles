@@ -12,6 +12,7 @@ else
 	set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo
 endif
 
+highlight Normal guibg=none
 highlight Pmenu ctermbg=none ctermfg=none
 highlight PmenuSbar ctermbg=none
 highlight PmenuThumb ctermbg=gray
