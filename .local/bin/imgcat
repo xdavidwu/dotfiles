@@ -1,5 +1,5 @@
 #!/usr/lib/9base/bin/rc -e
-convert $* `{
+magick $* `{
 	# XXX: $foo(1)x and `{}x produce spaces between?
 	rcxy=`{tiocgwinsz} && echo -resize $rcxy(3)^x`{
 		echo $rcxy(4) / $rcxy(1) '* ('$rcxy(1) - 1')' | bc
