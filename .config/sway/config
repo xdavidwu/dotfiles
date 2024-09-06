@@ -49,7 +49,7 @@ set $show_brightness notify-send Brightness "Brightness set to $(brightnessctl -
 
 bindsym {
 	$m+Return	exec footclient
-	$m+d	exec j4-dmenu-desktop --dmenu='wmenu -i -n c0c0c0 -N 303030 -s ffffff -S 37474f' --no-generic --term=footclient --usage-log=$XDG_CACHE_HOME/j4desktop
+	$m+d	exec j4-dmenu-desktop --dmenu='wmenu -f "Noto Sans CJK TC 11" -i -n c0c0c0 -N 303030 -s ffffff -S 37474f' --no-generic --term=footclient --usage-log=$XDG_CACHE_HOME/j4desktop
 
 	$m+Shift+q	kill
 
