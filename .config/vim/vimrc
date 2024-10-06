@@ -24,6 +24,8 @@ set laststatus=1
 set bg=dark
 set title
 set mouse=
+set spell
+set spelllang=en_us,cjk
 set backupdir=$HOME/.cache/vim/backup | call mkdir(&backupdir, 'p', 0700)
 set directory=$HOME/.cache/vim/swap   | call mkdir(&directory, 'p', 0700)
 set viewdir=$HOME/.cache/vim/view     | call mkdir(&viewdir, 'p', 0700)
