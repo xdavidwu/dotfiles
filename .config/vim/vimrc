@@ -37,7 +37,7 @@ let g:ale_set_signs=0
 let g:c_parse_compile_commands=1
 let g:ale_linters={
 \	'c': ['clangd'],
-\	'vue': ['eslint', 'volar'],
+\	'vue': ['eslint', 'tsserver'],
 \}
 let g:ale_vue_volar_init_options={
 \   'typescript': { 'tsdk': 'node_modules/typescript/lib' },
