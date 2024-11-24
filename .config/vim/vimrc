@@ -47,6 +47,14 @@ let g:ale_vue_volar_init_options={
 let g:ale_php_phpcs_options="--standard=PSR2"
 let g:ale_completion_enabled=1
 let g:ale_java_javac_classpath=$ANDROID_SDK_ROOT."/platforms/android-33/android.jar"
+let g:ale_java_javalsp_executable=$HOME.'/sources/java-language-server/dist/lang_server_linux.sh'
+let g:ale_java_javalsp_config={
+\	'java': {
+\		'classPath': [
+\			$ANDROID_SDK_ROOT.'/platforms/android-33/android.jar'
+\		]
+\	}
+\}
 let g:ale_javascript_eslint_options='--flag unstable_ts_config'
 let g:SuperTabDefaultCompletionType='<c-n>'
 
