@@ -48,17 +48,7 @@ fi
 command -v nvim >/dev/null && alias vim=nvim
 alias sway="env LC_ALL=zh_TW.utf8 XDG_CURRENT_DESKTOP=sway sway"
 alias mcshl="env ALSOFT_DRIVERS=alsa $_GCOMPAT_PRELOAD _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=lcd -Xmn512m -Xms2G -Xmx2G -XX:+UseTransparentHugePages -XX:MaxGCPauseMillis=50 -XX:+UseZGC $_JAVA_OPTIONS\" mcshl"
-alias tstoggle="swaymsg input 1267:9454:ELAN24EE:00_04F3:24EE events toggle"
 
-alias makepkgsh="podman run -itu builder -w /home/builder -v .:/home/builder -v /var/cache/pacman/pkg:/var/cache/pacman/pkg --userns keep-id registry.xdavidwu.link/ci-modulize/archlinux-docker-ci/base-devel sh"
-if [ -f /usr/bin/composer.phar ]; then
-	alias composer81="php81 /usr/bin/composer.phar"
-	alias composer82="php82 /usr/bin/composer.phar"
-	alias composer="php83 /usr/bin/composer.phar"
-fi
-alias artisan81="php81 artisan"
-alias artisan82="php82 artisan"
-alias artisan="php83 artisan"
 alias dl="curl -OJLR --compressed"
 alias errno="grep -h '^#define[[:space:]]*E' /usr/include/asm-generic/errno* | sed 's|^#define[[:space:]]*||'"
 alias signal="grep -h '^#define SIG' /usr/include/asm/signal.h | sed 's|^#define ||'"
@@ -151,5 +141,5 @@ _completion_loader sudo 2>/dev/null
 [ $? -eq 124 ] && complete -F _comp_cmd_sudo doas
 
 _completion_loader symfony-autocomplete 2>/dev/null
-[ $? -eq 124 ] && complete -F _symfony artisan artisan81 composer composer81
+[ $? -eq 124 ] && complete -F _symfony artisan composer
 true

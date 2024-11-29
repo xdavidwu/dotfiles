@@ -21,7 +21,6 @@ export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
 export VIMPAGER_RC="$XDG_CONFIG_HOME/vim/vimrc"
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CACHE_HOME/java
 	$_JAVA_OPTIONS"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
@@ -34,7 +33,6 @@ export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 export MYSQL_HISTFILE="$XDG_CACHE_HOME/mysql_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export ABDUCO_SOCKET_DIR="$XDG_DATA_HOME"
 
 # go phone home stuff
@@ -66,7 +64,6 @@ if [ "${OSTYPE%%-*}" = "linux" ]; then
 	export SDL_VIDEODRIVER=wayland
 	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 	export GTK_IM_MODULE=wayland
-	export QT_IM_MODULE=fcitx
 	export GTK_THEME=Arc-Darker
 fi
 
