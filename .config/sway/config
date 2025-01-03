@@ -22,21 +22,6 @@ output {
 		pos 1280 0
 	}
 
-	'BNQ BenQ BL2780 96L0214501Q' {
-		pos 0 0
-		subpixel rgb
-	}
-
-	'Dell Inc. DELL U2422HE 5DFMNM3' {
-		pos 1920 0
-		subpixel bgr
-	}
-
-	'Shenzhen Soogeen Electronics Co., LTD. L01N8A 0x01348C5C' {
-		transform 270
-		pos 9000 9000
-	}
-
 	HEADLESS-1 {
 		mode 1080x1220
 		scale 2
