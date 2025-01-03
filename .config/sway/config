@@ -7,6 +7,7 @@ exec {
 	~/.local/libexec/title-watch
 	wlchewing -e -d no -f "Noto Sans CJK TC 11" -b#303030 -s#80cbc4 -S#101a19 2>/tmp/wlchewing.log
 	dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP GTK_THEME
+	wayvnc 0.0.0.0
 }
 
 #xwayland disable 
@@ -34,6 +35,11 @@ output {
 	'Shenzhen Soogeen Electronics Co., LTD. L01N8A 0x01348C5C' {
 		transform 270
 		pos 9000 9000
+	}
+
+	HEADLESS-1 {
+		mode 1080x1220
+		scale 2
 	}
 
 	* background ~/.local/share/backgrounds/20618.jpg fill
