@@ -134,11 +134,15 @@ if ! type _completion_loader >/dev/null 2>&1; then
 	fi
 fi
 
+get_completion() {
+	type _comp_cmd_$1 >/dev/null 2>&1 && echo _comp_cmd_$1 || echo _$1
+}
+
 _completion_loader ssh 2>/dev/null
-[ $? -eq 124 ] && complete -F _comp_cmd_ssh rssh
+[ $? -eq 124 ] && complete -F "$(get_completion ssh)" rssh
 
 _completion_loader sudo 2>/dev/null
-[ $? -eq 124 ] && complete -F _comp_cmd_sudo doas
+[ $? -eq 124 ] && complete -F "$(get_completion sudo)" doas
 
 _completion_loader symfony-autocomplete 2>/dev/null
 [ $? -eq 124 ] && complete -F _symfony artisan composer
