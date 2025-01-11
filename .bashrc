@@ -59,6 +59,10 @@ sleepto() {
 	sleep $(($(date --date="$1" +%s) - $EPOCHSECONDS))
 }
 
+desecret() {
+	yq '.data |= (to_entries | map(.value |= @base64d) | from_entries)'
+}
+
 # application envs
 export GPG_TTY=$(tty 2>/dev/null)
 
