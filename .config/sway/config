@@ -10,13 +10,21 @@ exec {
 	wayvnc 0.0.0.0
 }
 
-#xwayland disable 
+#xwayland disable
+
+seat * xcursor_theme capitaine-cursors-dark
 
 output {
 	eDP-1 {
 		pos 0 0
 		scale 3
 	}
+
+	'Chimei Innolux Corporation 0x1466 Unknown' {
+		pos 0 0
+		scale 2
+	}
+
 
 	DP-2 {
 		pos 1280 0
@@ -34,6 +42,7 @@ bindswitch lid:toggle output eDP-1 toggle
 
 input {
 	1739:30383:DELL07E6:00_06CB:76AF_Touchpad tap enabled
+	1267:13035:VEN_04F3:00_04F3:32EB_Touchpad tap enabled
 	1267:9454:ELAN24EE:00_04F3:24EE map_to_output eDP-1
 }
 
