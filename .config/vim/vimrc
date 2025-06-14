@@ -1,4 +1,4 @@
-set packpath=$HOME/.config/vim
+set packpath+=$HOME/.config/vim
 
 if has('nvim')
 	set viminfo='20,<1000,s1000,n$HOME/.cache/vim/viminfo.nvim
