@@ -1,7 +1,6 @@
 exec {
 	himitsud
 	hissh-agent
-	pipewire
 	mako
 	foot --server
 	~/.local/libexec/title-watch
